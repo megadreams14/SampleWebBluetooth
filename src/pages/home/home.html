@@ -1,17 +1,14 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Home</ion-title>
+    <ion-title>BLE連携テスト</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+  <ion-item *ngIf="batteryLevel > 0">
+    <div>バッテリー残量: {{batteryLevel}}％</div>
+  </ion-item>
+  <ion-item>
+    <button ion-button full (click)="onClickBleBtn()">体温計のバッテリー残量を取得する</button>
+  </ion-item>
 </ion-content>
